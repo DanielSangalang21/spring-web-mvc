@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="TBL_LOG">
+ 	<resultMap type="com.dreamcatcher.bean.LogBean" id="logs">
+		<result column="USER_ID" property="userID"/>
+		<result column="LOG_ID" property="logID"/>
+		<result column="LOG_DATE" property="logDate"/>
+		<result column="LOG_ACTION" property="logAction"/>
+	</resultMap>
+
+	<select id="getLogs" resultMap="logs">
+		SELECT LOG_ID
+				,LOG_ACTION
+				,USER_ID
+				,LOG_DATE
+		FROM TBL_LOG
+	</select>
+</mapper>
